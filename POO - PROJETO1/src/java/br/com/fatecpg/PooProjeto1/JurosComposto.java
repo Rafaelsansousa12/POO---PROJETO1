@@ -33,14 +33,47 @@ public class JurosComposto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
+                       out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet JurosComposto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet JurosComposto at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Projeto 01</h1>");
+            out.println("<h2>Juros-Composto</h2>");
+            out.println("<hr/>");
+            out.println("<form>");
+            out.println("<input type = 'text' name= 'capital' />");
+            out.println("<input type = 'text' name= 'taxa' />");
+            out.println("<input type = 'text' name= 'mes' />");
+            out.println("<input type = 'submit' name= 'montante' value ='Calcular montante'/>");
+            out.println("</form>");
+            out.println("<hr/>");
+            if (request.getParameter("montante")!=null){
+                try{
+                    double capital = Double.parseDouble(request.getParameter("capital"));
+                    double taxa = Double.parseDouble(request.getParameter("taxa"));
+                    int mes  = Integer.parseInt(request.getParameter("mes"));
+                    out.println("<table>");
+                    for (int i=1; i<mes+1; i++){
+                         out.println("<tr>");
+                         out.println("<td>"+ i +"º mês </td>");
+                         /*double n = Math.ceil(capital * Math.pow(1 +(taxa/100),i));*/
+                         double n = capital * Math.pow(1 +(taxa/100),i);
+                         BigDecimal bd = new BigDecimal(n).setScale(2, RoundingMode.HALF_EVEN);
+                         out.println("<td>R$ "+ bd +"</td>");
+                         out.println("</tr>");
+                }
+                    out.println("</table>");
+                    /*  double montante = Math.ceil(capital * Math.pow(1 +(taxa/100),mes));*/
+                    double montante = capital * Math.pow(1 +(taxa/100),mes);
+                    BigDecimal bd = new BigDecimal(montante).setScale(2, RoundingMode.HALF_EVEN);
+                    out.println("<h1>A aplicação de R$ "+ capital +" a taxa de "+ taxa +" % ao mês, durante "+ mes +" mês(s), dará um montante no valor de R$ "+ bd +"</h1>");
+                }catch (NumberFormatException ex){
+                    out.println("<h2 style='color:red;'>Erro ao calcular os campos</h2>");
+                }
+            }
+            out.println("<h3><a href='index.html'>Voltar</a></h3>");
             out.println("</body>");
             out.println("</html>");
         }
