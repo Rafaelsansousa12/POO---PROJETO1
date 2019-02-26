@@ -39,11 +39,11 @@ public class JurosSimples extends HttpServlet {
                 out.println("<head>");
                     out.println("<style type=\"text/css\" media=\"screen\"  >\n" +
 "        .fonte {\n" +
-"            color: #d9dbe3; font-family: Arial, Helvetica, sans-serif;\n" +
+"            color: white; font-family: Arial, Helvetica, sans-serif;\n" +
 "            text-align: center;\n" +
 "        }\n" +
 "        .fontef {\n" +
-"            color: #d9dbe3; font-family: Arial, Helvetica, sans-serif;\n" +
+"            color: white; font-family: Arial, Helvetica, sans-serif;\n" +
 "            text-align: center;\n" +
 "            margin-left: -550px;\n" +
 "        }\n" +
@@ -132,11 +132,11 @@ public class JurosSimples extends HttpServlet {
                                  double J = (C * (i / 100) * t);
                                  double M = J + C;
 
-                                 out.println("<p class='resposta'>Juros de R$  "+J+"</p>");
-                                 out.println("<p class='resposta'>Montante de R$  "+M+"</p>");
+                                 out.println("<h2 class='fonte'>Juros de R$  "+J+"</h2>");
+                                 out.println("<h2 class='fonte style='color:white;'>Montante de R$  "+M+"</h2>");
                                          
                             } catch (NumberFormatException ex) {
-                                out.println("<h1 style='color:red';>Erro ao converter os campos</h1>");
+                                out.println("<h1 style='color:white';>Erro ao converter os campos</h1>");
                             } 
                         }
                        out.println("<br/>");

@@ -123,7 +123,7 @@ public class JurosComposto extends HttpServlet {
                         out.println("<input type='text' name='taxa'/><br/>");
                         out.println("<b class=\"fontef\">Mês</b><br/>");
                         out.println("<input type='text' name='mes'/><br/><br/>");
-                        out.println("<input class='botao' type='submit' name='montante' value ='Calcular montante'/>");
+                        out.println("<input class='botao' type='submit' name='montante' value ='Calcular'/ style='padding:20px;'>");
             if (request.getParameter("montante")!=null){
                 try{
                     double capital = Double.parseDouble(request.getParameter("capital"));
@@ -143,7 +143,7 @@ public class JurosComposto extends HttpServlet {
                     /*  double montante = Math.ceil(capital * Math.pow(1 +(taxa/100),mes));*/
                     double montante = capital * Math.pow(1 +(taxa/100),mes);
                     BigDecimal bd = new BigDecimal(montante).setScale(2, RoundingMode.HALF_EVEN);
-                    out.println("<h1>A aplicação de R$ "+ capital +" a taxa de "+ taxa +" % ao mês, durante "+ mes +" mês(s), dará um montante no valor de R$ "+ bd +"</h1>");
+                    out.println("<h1 style=color:white;>A aplicação de R$ "+ capital +" a taxa de "+ taxa +" % ao mês, durante "+ mes +" mês(s), dará um montante no valor de R$ "+ bd +"</h1>");
                 }catch (NumberFormatException ex){
                     out.println("<h2 style='color:red;'>Erro ao calcular os campos</h2>");
                 }
