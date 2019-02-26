@@ -133,10 +133,10 @@ public class JurosSimples extends HttpServlet {
                                  double M = J + C;
 
                                  out.println("<h2 class='fonte'>Juros de R$  "+J+"</h2>");
-                                 out.println("<h2 class='fonte style='color:white;'>Montante de R$  "+M+"</h2>");
+                                 out.println("<h2 class='fonte'>Montante de R$  "+M+"</h2>");
                                          
                             } catch (NumberFormatException ex) {
-                                out.println("<h1 style='color:white';>Erro ao converter os campos</h1>");
+                                out.println("<h1 class='fonte';>Erro ao converter os campos</h1>");
                             } 
                         }
                        out.println("<br/>");
