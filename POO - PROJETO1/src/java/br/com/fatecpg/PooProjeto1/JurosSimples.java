@@ -37,25 +37,91 @@ public class JurosSimples extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
                 out.println("<head>");
-                    out.println("<title>Juros Simples </title>");   
+                    out.println("<style type=\"text/css\" media=\"screen\"  >\n" +
+"        .fonte {\n" +
+"            color: #d9dbe3; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: center;\n" +
+"        }\n" +
+"        .fontef {\n" +
+"            color: #d9dbe3; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: center;\n" +
+"            margin-left: -550px;\n" +
+"        }\n" +
+"        .cabeca {\n" +
+"            color: #29255d; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: left;\n" +
+"            background-color: #d9dbe3;\n" +
+"            padding: 20px;\n" +
+"        }\n" +
+"        .rodape {\n" +
+"            color: #29255d; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: left;\n" +
+"            background-color: #d9dbe3;\n" +
+"            padding: 8px;\n" +
+"        }\n" +
+"        \n" +
+"        input[type=text] {\n" +
+"            width: 50%;\n" +
+"            padding: 12px 20px;\n" +
+"            margin: 8px 0;\n" +
+"            box-sizing: border-box;\n" +
+"            border: 2px solid #d9dbe3;\n" +
+"            border-radius: 8px;\n" +
+"        }\n" +
+"        .botao{\n" +
+"            font-size:15px; margin-left: auto;\n" +
+"            font-family: Arial, Helvetica, sans-serif;\n" +
+"            font-weight:bold;\n" +
+"            color: #d9dbe3;\n" +
+"            background:#283b91;\n" +
+"            border:0px;\n" +
+"            border-radius: 8px;\n" +
+"            width:120px;\n" +
+"            height:30px;\n" +
+"        }\n" +
+"         .botao{\n" +
+"            font-size:15px; margin-left: auto;\n" +
+"            font-family: Arial, Helvetica, sans-serif;\n" +
+"            font-weight:bold;\n" +
+"            color: #d9dbe3;\n" +
+"            background:#283b91;\n" +
+"            border:0px;\n" +
+"            border-radius: 8px;\n" +
+"            width:120px;\n" +
+"            height:30px;\n" +
+"        }\n" +
+"        .botaoref{\n" +
+"            font-size:15px; margin-left: auto;\n" +
+"            font-family: Arial, Helvetica, sans-serif;\n" +
+"            font-weight:bold;\n" +
+"            color: #29255d;\n" +
+"            background:#d9dbe3;\n" +
+"            border:0px;\n" +
+"            border-radius: 8px;\n" +
+"            width:120px;\n" +
+"            height:30px;\n" +
+"        }\n" +
+"    </style>");   
                     
+                out.println("<meta charset=\"UTF-8\">");
                 out.println("</head>");
-                out.println("<body>");
+                out.println("<body style=\"background-color: #29255d\">");
                 
-                    out.println("<div class='geral'>");
-                        out.println("<h1>Juros Simples</h1>");
-
-                        out.println("<hr/>");
-                        
-                        out.println("<h3 style='color: darkblue;'>J = C . i . t</h3>");
-                        out.println("<h3 style='color: darkblue;'>M = J + C</h3>");
-                        out.println("<h3>J = juros <br/>M = Montante<br/>C = Capital <br/>i = Taxa de Juros <br/>t = Período</h3></div>");
+                    out.println("<h2 class=\"fonte\">Projeto 01 - POO</h2>");
+                    out.println("<h1 class=\"cabeca\">Juros Simples</h1>");             
+                    out.println("<h3 class=\"fonte\">J = C . i . t</h3>");
+                    out.println("<h3 class=\"fonte\">M = J + C</h3>");
+                    out.println("<h3 class=\"fonte\">J = juros <br/>M = Montante<br/>C = Capital <br/>i = Taxa de Juros <br/>t = Período</h3></div>");
                       
-                        out.println("<form class='formulario'>");
-                            out.println("<b>Capital</b><input type='text' name='C' />");
-                            out.println("<b>Taxa</b><input type='text' name='i'/>");
-                            out.println("<b>Período</b><input type='text' name='t'/>");
-                            out.println("<input class='botao' type='submit' name='calcular' value='Calcular'/>");
+                       out.println("<form>");
+                        out.println("<div align=\"center\">");
+                        out.println("<b class=\"fontef\">Capital</b><br/>");
+                        out.println("<input type='text' name='C' /><br/>");
+                        out.println("<b class=\"fontef\">Taxa</b><br/>");
+                        out.println("<input type='text' name='i'/><br/>");
+                        out.println("<b class=\"fontef\">Período</b><br/>");
+                        out.println("<input type='text' name='t'/><br/><br/>");
+                        out.println("<input class='botao' type='submit' name='calcular' value='Calcular'/>");
                         
                             if (request.getParameter("calcular") != null) {
                             try {
@@ -74,8 +140,12 @@ public class JurosSimples extends HttpServlet {
                             } 
                         }
                        out.println("<br/>");
-                       out.println("<button style='margin-top: 20px;'><a href='index.html'>Voltar</a></button>"); 
+                       out.println("<br/>");
+                       out.println("<br/>");
+                       out.println("</div>");
+                       out.println("<button  class='botaoref'><a href='index.html'>Voltar</a></button>"); 
                        out.println("</form>");                                                                                                            
+                       out.println("<h5 class=\"rodape\">By: Fernando Pedrozo; Luiz Henrique Carminati; Rafael dos Santos. </h5>");                                                                                                            
                 out.println("</body>");
             out.println("</html>");
         }

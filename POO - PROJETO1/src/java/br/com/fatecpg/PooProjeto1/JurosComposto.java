@@ -7,6 +7,8 @@ package br.com.fatecpg.PooProjeto1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,20 +37,93 @@ public class JurosComposto extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
                        out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet JurosComposto</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Projeto 01</h1>");
-            out.println("<h2>Juros-Composto</h2>");
-            out.println("<hr/>");
-            out.println("<form>");
-            out.println("<input type = 'text' name= 'capital' />");
-            out.println("<input type = 'text' name= 'taxa' />");
-            out.println("<input type = 'text' name= 'mes' />");
-            out.println("<input type = 'submit' name= 'montante' value ='Calcular montante'/>");
-            out.println("</form>");
-            out.println("<hr/>");
+                out.println("<head>");
+                    out.println("<style type=\"text/css\" media=\"screen\"  >\n" +
+"        .fonte {\n" +
+"            color: #d9dbe3; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: center;\n" +
+"        }\n" +
+"        .fontef {\n" +
+"            color: #d9dbe3; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: center;\n" +
+"            margin-left: -550px;\n" +
+"        }\n" +
+"        .cabeca {\n" +
+"            color: #29255d; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: left;\n" +
+"            background-color: #d9dbe3;\n" +
+"            padding: 20px;\n" +
+"        }\n" +
+"        .rodape {\n" +
+"            color: #29255d; font-family: Arial, Helvetica, sans-serif;\n" +
+"            text-align: left;\n" +
+"            background-color: #d9dbe3;\n" +
+"            padding: 8px;\n" +
+"        }\n" +
+"        \n" +
+"        input[type=text] {\n" +
+"            width: 50%;\n" +
+"            padding: 12px 20px;\n" +
+"            margin: 8px 0;\n" +
+"            box-sizing: border-box;\n" +
+"            border: 2px solid #d9dbe3;\n" +
+"            border-radius: 8px;\n" +
+"        }\n" +
+"        .botao{\n" +
+"            font-size:15px; margin-left: auto;\n" +
+"            font-family: Arial, Helvetica, sans-serif;\n" +
+"            font-weight:bold;\n" +
+"            color: #d9dbe3;\n" +
+"            background:#283b91;\n" +
+"            border:0px;\n" +
+"            border-radius: 8px;\n" +
+"            width:120px;\n" +
+"            height:30px;\n" +
+"        }\n" +
+"         .botao{\n" +
+"            font-size:15px; margin-left: auto;\n" +
+"            font-family: Arial, Helvetica, sans-serif;\n" +
+"            font-weight:bold;\n" +
+"            color: #d9dbe3;\n" +
+"            background:#283b91;\n" +
+"            border:0px;\n" +
+"            border-radius: 8px;\n" +
+"            width:120px;\n" +
+"            height:30px;\n" +
+"        }\n" +
+"        .botaoref{\n" +
+"            font-size:15px; margin-left: auto;\n" +
+"            font-family: Arial, Helvetica, sans-serif;\n" +
+"            font-weight:bold;\n" +
+"            color: #29255d;\n" +
+"            background:#d9dbe3;\n" +
+"            border:0px;\n" +
+"            border-radius: 8px;\n" +
+"            width:120px;\n" +
+"            height:30px;\n" +
+"        }\n" +
+"    </style>");   
+                    
+                out.println("<meta charset=\"UTF-8\">");
+                out.println("</head>");
+                out.println("<body style=\"background-color: #29255d\">");
+                
+			out.println("<h2 class=\"fonte\">Projeto 01 - POO</h2>");
+                        out.println("<h1 class=\"cabeca\">JurosComposto</h1>");
+                     
+                        out.println("<h3 class=\"fonte\">J = C . i . t</h3>");
+                        out.println("<h3 class=\"fonte\">M = J + C</h3>");
+                        out.println("<h3 class=\"fonte\">J = juros <br/>M = Montante<br/>C = Capital <br/>i = Taxa de Juros <br/>t = Período</h3></div>");
+                      
+                        out.println("<form>");
+                        out.println("<div align=\"center\">");
+                        out.println("<b class=\"fontef\">Capital</b><br/>");
+                        out.println("<input type='text' name='C' /><br/>");
+                        out.println("<b class=\"fontef\">Taxa</b><br/>");
+                        out.println("<input type='text' name='i'/><br/>");
+                        out.println("<b class=\"fontef\">Mês</b><br/>");
+                        out.println("<input type='text' name='t'/><br/><br/>");
+                        out.println("<input class='botao' type='submit' name='montante' value ='Calcular montante'/>");
             if (request.getParameter("montante")!=null){
                 try{
                     double capital = Double.parseDouble(request.getParameter("capital"));
@@ -73,8 +148,14 @@ public class JurosComposto extends HttpServlet {
                     out.println("<h2 style='color:red;'>Erro ao calcular os campos</h2>");
                 }
             }
-            out.println("<h3><a href='index.html'>Voltar</a></h3>");
-            out.println("</body>");
+                       out.println("<br/>");
+                       out.println("<br/>");
+                       out.println("<br/>");
+                       out.println("</div>");
+                       out.println("<button  class='botaoref'><a href='index.html'>Voltar</a></button>"); 
+                       out.println("</form>");                                                                                                            
+                       out.println("<h5 class=\"rodape\">By: Fernando Pedrozo; Luiz Henrique Carminati; Rafael dos Santos. </h5>");                                                                                                            
+                out.println("</body>");
             out.println("</html>");
         }
     }
