@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Rafael Sousa
+ * @author Fernando
  */
 @WebServlet(name = "JurosComposto", urlPatterns = {"/juros-composto.html"})
 public class JurosComposto extends HttpServlet {
@@ -118,11 +118,11 @@ public class JurosComposto extends HttpServlet {
                         out.println("<form>");
                         out.println("<div align=\"center\">");
                         out.println("<b class=\"fontef\">Capital</b><br/>");
-                        out.println("<input type='text' name='C' /><br/>");
+                        out.println("<input type='text' name='capital' /><br/>");
                         out.println("<b class=\"fontef\">Taxa</b><br/>");
-                        out.println("<input type='text' name='i'/><br/>");
+                        out.println("<input type='text' name='taxa'/><br/>");
                         out.println("<b class=\"fontef\">Mês</b><br/>");
-                        out.println("<input type='text' name='t'/><br/><br/>");
+                        out.println("<input type='text' name='mes'/><br/><br/>");
                         out.println("<input class='botao' type='submit' name='montante' value ='Calcular montante'/>");
             if (request.getParameter("montante")!=null){
                 try{
