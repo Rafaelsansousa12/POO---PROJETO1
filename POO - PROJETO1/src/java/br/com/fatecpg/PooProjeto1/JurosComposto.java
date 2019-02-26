@@ -123,7 +123,7 @@ public class JurosComposto extends HttpServlet {
                         out.println("<input type='text' name='taxa'/><br/>");
                         out.println("<b class=\"fontef\">Mês</b><br/>");
                         out.println("<input type='text' name='mes'/><br/><br/>");
-                        out.println("<input class='botao' type='submit' name='montante' value ='Calcular'/ style='padding:20px;'>");
+                        out.println("<input class='botao' type='submit' name='montante' value ='Calcular'/><br/><br/>");
             if (request.getParameter("montante")!=null){
                 try{
                     double capital = Double.parseDouble(request.getParameter("capital"));
@@ -132,11 +132,11 @@ public class JurosComposto extends HttpServlet {
                     out.println("<table>");
                     for (int i=1; i<mes+1; i++){
                          out.println("<tr>");
-                         out.println("<td>"+ i +"º mês </td>");
+                         out.println("<td class='fonte'>"+ i +"º mês </td>");
                          /*double n = Math.ceil(capital * Math.pow(1 +(taxa/100),i));*/
                          double n = capital * Math.pow(1 +(taxa/100),i);
                          BigDecimal bd = new BigDecimal(n).setScale(2, RoundingMode.HALF_EVEN);
-                         out.println("<td>R$ "+ bd +"</td>");
+                         out.println("<td class='fonte'>R$ "+ bd +"</td>");
                          out.println("</tr>");
                 }
                     out.println("</table>");
