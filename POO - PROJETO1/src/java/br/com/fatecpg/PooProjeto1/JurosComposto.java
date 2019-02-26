@@ -145,7 +145,7 @@ public class JurosComposto extends HttpServlet {
                     BigDecimal bd = new BigDecimal(montante).setScale(2, RoundingMode.HALF_EVEN);
                     out.println("<h1 class='fonte';>A aplicação de R$ "+ capital +" a taxa de "+ taxa +" % ao mês, durante "+ mes +" mês(s), dará um montante no valor de R$ "+ bd +"</h1>");
                 }catch (NumberFormatException ex){
-                    out.println("<h2 class='fonte';'>Erro ao calcular os campos</h2>");
+                    out.println("<h1 class='fonte';>Erro ao converter os campos</h1>");
                 }
             }
                        out.println("<br/>");
